@@ -6,9 +6,9 @@ import androidx.fragment.app.viewModels
 import vini.lop.io.marvelappstarter.databinding.FragmentFavoriteCharacterBinding
 import vini.lop.io.marvelappstarter.ui.base.BaseFragment
 
-class FavoriteCharacterFragment :
-    BaseFragment<FragmentFavoriteCharacterBinding, FavoriteCharacterViewModel>() {
-    override val viewModel: FavoriteCharacterViewModel by viewModels()
+class FavoritesCharacterFragment :
+    BaseFragment<FragmentFavoriteCharacterBinding, FavoritesCharacterViewModel>() {
+    override val viewModel: FavoritesCharacterViewModel by viewModels()
 
     override fun getViewBinding(
         inflater: LayoutInflater,

@@ -13,9 +13,9 @@
             app:argType="vini.lop.io.marvelappstarter.data.model.character.CharacterModel" />
     </fragment>
     <fragment
-        android:id="@+id/favoriteCharacterFragment"
-        android:name="vini.lop.io.marvelappstarter.ui.favorite.FavoriteCharacterFragment"
-        android:label="FavoriteCharacterFragment">
+        android:id="@+id/favoritesCharacterFragment"
+        android:name="vini.lop.io.marvelappstarter.ui.favorite.FavoritesCharacterFragment"
+        android:label="FavoritesCharacterFragment">
         <action
             android:id="@+id/action_favoriteCharacterFragment_to_detailsCharacterFragment"
             app:destination="@id/detailsCharacterFragment" />

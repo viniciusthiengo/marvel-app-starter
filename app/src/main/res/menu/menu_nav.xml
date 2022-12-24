@@ -12,8 +12,7 @@
         android:title="@string/nav_menu_search_item" />
 
     <item
-        android:id="@+id/favoriteCharacterFragment"
+        android:id="@+id/favoritesCharacterFragment"
         android:icon="@drawable/ic_favorite_border"
         android:title="@string/nav_menu_favorites_item" />
-
 </menu>

@@ -11,7 +11,7 @@
         android:label="DetailsCharacterFragment"
         tools:layout="@layout/fragment_details_character">
         <argument
-            android:name="characterId"
+            android:name="character"
             app:argType="vini.lop.io.marvelappstarter.data.model.character.CharacterModel" />
     </fragment>
     <fragment

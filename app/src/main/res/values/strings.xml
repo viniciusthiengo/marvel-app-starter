@@ -34,4 +34,9 @@
     <string name="an_error_occurred">Um erro ocorreu!</string>
     <string name="saved_successfully">Salvo com sucesso!</string>
 
+    <!-- Nav menu -->
+    <string name="nav_menu_home_item">Home</string>
+    <string name="nav_menu_search_item">Search</string>
+    <string name="nav_menu_favorites_item">Favorites</string>
+
 </resources>

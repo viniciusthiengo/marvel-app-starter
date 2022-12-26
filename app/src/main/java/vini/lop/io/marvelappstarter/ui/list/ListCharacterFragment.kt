@@ -3,9 +3,11 @@ package vini.lop.io.marvelappstarter.ui.list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import vini.lop.io.marvelappstarter.databinding.FragmentListCharacterBinding
 import vini.lop.io.marvelappstarter.ui.base.BaseFragment
 
+@AndroidEntryPoint
 class ListCharacterFragment : BaseFragment<FragmentListCharacterBinding, ListCharacterViewModel>() {
 
     override val viewModel: ListCharacterViewModel by viewModels()

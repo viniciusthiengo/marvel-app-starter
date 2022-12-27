@@ -22,3 +22,10 @@ fun View.show() {
 fun View.hide() {
     this.visibility = View.INVISIBLE
 }
+
+fun String.preciseSubstring(length: Int): String =
+    if (length > this.length) {
+        "${this.substring(0, length)}..."
+    } else {
+        this
+    }

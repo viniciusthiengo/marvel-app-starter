@@ -5,7 +5,10 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class ThumbnailModel(
+data class ThumbnailModel(
     @SerializedName("path") val path: String,
     @SerializedName("extension") val extension: String
-) : Parcelable
+) : Parcelable {
+
+    fun getFullPath(): String = "${path}.${extension}".lowercase()
+}

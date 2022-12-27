@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 import vini.lop.io.marvelappstarter.data.model.ThumbnailModel
 
 @Parcelize
-class ComicModel(
+data class ComicModel(
     @SerializedName("id")
     val id: Int,
     @SerializedName("title")

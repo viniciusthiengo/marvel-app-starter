@@ -24,7 +24,7 @@ fun View.hide() {
 }
 
 fun String.preciseSubstring(length: Int): String =
-    if (length > this.length) {
+    if (length < this.length) {
         "${this.substring(0, length)}..."
     } else {
         this

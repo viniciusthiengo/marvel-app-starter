@@ -6,10 +6,14 @@ sealed class ResourceState<T>(
 ) {
     class Success<T>(data: T) : ResourceState<T>(data)
 
-    class Error<T>(
+    open class Error<T>(
         message: String,
         data: T? = null
     ) : ResourceState<T>(data, message)
+
+    class InternetError<T> : Error<T>(message = "Erro de conexão com a Internet.")
+
+    class ParseError<T> : Error<T>(message = "Falha na conversão de dados.")
 
     class Loading<T> : ResourceState<T>()
 

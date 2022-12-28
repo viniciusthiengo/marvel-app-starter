@@ -38,5 +38,7 @@
     <string name="nav_menu_home_item">Home</string>
     <string name="nav_menu_search_item">Search</string>
     <string name="nav_menu_favorites_item">Favorites</string>
+    <string name="list_state_erro_internet_issue_message">Erro de conexão com a Internet.</string>
+    <string name="list_state_erro_parse_issue_message">Falha na conversão de dados.</string>
 
 </resources>

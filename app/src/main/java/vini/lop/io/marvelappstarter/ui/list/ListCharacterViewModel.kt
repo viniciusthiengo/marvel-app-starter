@@ -32,6 +32,8 @@ class ListCharacterViewModel @Inject constructor(
     }
 
     private suspend fun safeFetch() {
+        _list.value = ResourceState.Loading()
+
         try {
             val response = repository.list()
             _list.value = handleResponse(response)

@@ -43,7 +43,7 @@ class ListCharacterFragment : BaseFragment<FragmentListCharacterBinding, ListCha
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
-        clickAdapter()
+        setClickListener()
         collectObserver()
     }
 
@@ -54,7 +54,7 @@ class ListCharacterFragment : BaseFragment<FragmentListCharacterBinding, ListCha
         }
     }
 
-    private fun clickAdapter() {
+    private fun setClickListener() {
         characterAdapter.setOnClickListener { characterModel ->
             val action = ListCharacterFragmentDirections
                 .actionListCharacterFragmentToDetailsCharacterFragment(characterModel)
@@ -76,7 +76,10 @@ class ListCharacterFragment : BaseFragment<FragmentListCharacterBinding, ListCha
                     binding.progressCircular.hide()
                     resource.message?.let { message ->
                         toast(getString(R.string.an_error_occurred))
-                        Timber.tag(ListCharacterFragment::class.java.name).e("Error -> $message")
+
+                        Timber
+                            .tag(this@ListCharacterFragment::class.java.name)
+                            .e("Error -> $message")
                     }
                 }
                 is ResourceState.Loading ->

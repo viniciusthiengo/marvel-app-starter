@@ -39,7 +39,10 @@ class ListCharacterFragment : BaseFragment<FragmentListCharacterBinding, ListCha
             false
         )
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()

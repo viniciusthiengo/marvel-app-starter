@@ -10,4 +10,7 @@ object Constants {
     const val PARAM_TS = "ts"
     const val PARAM_API_KEY = "apikey"
     const val PARAM_HASH = "hash"
+
+    const val DEFAULT_QUERY = ""
+    const val LAST_SEARCH_QUERY = "lastSearchQuery"
 }

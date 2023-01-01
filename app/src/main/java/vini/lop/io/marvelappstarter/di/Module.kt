@@ -1,16 +1,21 @@
 package vini.lop.io.marvelappstarter.di
 
+import android.content.Context
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import timber.log.Timber
+import vini.lop.io.marvelappstarter.data.local.MarvelDatabase
 import vini.lop.io.marvelappstarter.data.remote.ServiceApi
 import vini.lop.io.marvelappstarter.util.Constants.BASE_URL
+import vini.lop.io.marvelappstarter.util.Constants.DATABASE_NAME
 import vini.lop.io.marvelappstarter.util.Constants.PARAM_API_KEY
 import vini.lop.io.marvelappstarter.util.Constants.PARAM_HASH
 import vini.lop.io.marvelappstarter.util.Constants.PARAM_TS
@@ -104,4 +109,18 @@ object Module {
     fun provideServiceApi(retrofit: Retrofit): ServiceApi {
         return retrofit.create(ServiceApi::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun providerMarvelDatabase(
+        @ApplicationContext context: Context
+    ) = Room.databaseBuilder(
+        context,
+        MarvelDatabase::class.java,
+        DATABASE_NAME
+    ).build()
+
+    @Singleton
+    @Provides
+    fun providerMarvelDao(marvelDatabase: MarvelDatabase) = marvelDatabase.marvelDao()
 }

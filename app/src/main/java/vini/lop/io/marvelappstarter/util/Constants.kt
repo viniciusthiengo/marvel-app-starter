@@ -13,4 +13,6 @@ object Constants {
 
     const val DEFAULT_QUERY = ""
     const val LAST_SEARCH_QUERY = "lastSearchQuery"
+
+    const val DATABASE_NAME = "marvel.db"
 }

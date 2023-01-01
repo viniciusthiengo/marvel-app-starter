@@ -17,17 +17,18 @@
         android:theme="@style/Theme.MarvelAppStarter"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+
         <activity
-            android:name="vini.lop.io.marvelappstarter.SplashActivity"
-            android:exported="true" />
-        <activity
-            android:name="vini.lop.io.marvelappstarter.MainActivity"
+            android:name="vini.lop.io.marvelappstarter.ui.activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="vini.lop.io.marvelappstarter.ui.activities.MainActivity"
+            android:exported="false" />
     </application>
 </manifest>

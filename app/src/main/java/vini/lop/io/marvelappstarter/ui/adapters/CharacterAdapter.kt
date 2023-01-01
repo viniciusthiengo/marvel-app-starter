@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import vini.lop.io.marvelappstarter.R
 import vini.lop.io.marvelappstarter.data.model.character.CharacterModel
 import vini.lop.io.marvelappstarter.databinding.ItemCharacterBinding
+import vini.lop.io.marvelappstarter.util.loadRemoteImg
 import vini.lop.io.marvelappstarter.util.preciseSubstring
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
@@ -68,9 +68,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHold
                 character.description.preciseSubstring(100)
             }
 
-            Glide.with(holder.itemView.context)
-                .load(character.thumbnailModel.getFullPath())
-                .into(imgCharacter)
+            imgCharacter.loadRemoteImg(path = character.thumbnailModel.getFullPath())
         }
 
         holder.itemView.setOnClickListener {

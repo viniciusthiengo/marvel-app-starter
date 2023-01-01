@@ -1,8 +1,10 @@
 package vini.lop.io.marvelappstarter.util
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 
 fun Fragment.toast(
     message: String,
@@ -29,3 +31,9 @@ fun String.preciseSubstring(length: Int): String =
     } else {
         this
     }
+
+fun ImageView.loadRemoteImg(path: String) {
+    Glide.with(this.context)
+        .load(path)
+        .into(this)
+}

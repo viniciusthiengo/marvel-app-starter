@@ -6,7 +6,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -18,10 +17,7 @@ import vini.lop.io.marvelappstarter.databinding.FragmentDetailsCharacterBinding
 import vini.lop.io.marvelappstarter.ui.adapters.ComicAdapter
 import vini.lop.io.marvelappstarter.ui.base.BaseFragment
 import vini.lop.io.marvelappstarter.ui.state.ResourceState
-import vini.lop.io.marvelappstarter.util.hide
-import vini.lop.io.marvelappstarter.util.preciseSubstring
-import vini.lop.io.marvelappstarter.util.show
-import vini.lop.io.marvelappstarter.util.toast
+import vini.lop.io.marvelappstarter.util.*
 
 @AndroidEntryPoint
 class DetailsCharacterFragment :
@@ -82,9 +78,7 @@ class DetailsCharacterFragment :
                 .preciseSubstring(length = 100)
         }
 
-        Glide.with(requireContext())
-            .load(characterModel.thumbnailModel.getFullPath())
-            .into(imgCharacterDetails)
+        imgCharacterDetails.loadRemoteImg(characterModel.thumbnailModel.getFullPath())
     }
 
     private fun onShowDialog(characterModel: CharacterModel) {

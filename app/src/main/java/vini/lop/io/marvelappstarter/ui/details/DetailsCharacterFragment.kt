@@ -139,7 +139,7 @@ class DetailsCharacterFragment :
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.favorite -> {
-                //viewModel.insert()
+                viewModel.insert(characterModel)
                 toast(getString(R.string.saved_successfully))
             }
         }

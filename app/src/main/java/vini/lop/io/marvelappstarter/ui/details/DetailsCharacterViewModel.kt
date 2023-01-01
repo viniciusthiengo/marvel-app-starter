@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import vini.lop.io.marvelappstarter.data.model.character.CharacterModel
 import vini.lop.io.marvelappstarter.data.model.comic.ComicModelResponse
 import vini.lop.io.marvelappstarter.repository.MarvelRepository
 import vini.lop.io.marvelappstarter.ui.state.ResourceState
@@ -51,5 +52,9 @@ class DetailsCharacterViewModel @Inject constructor(
         }
 
         return ResourceState.Error(message = response.message())
+    }
+
+    fun insert(characterModel: CharacterModel) = viewModelScope.launch {
+        repository.insert(characterModel)
     }
 }
